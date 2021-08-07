@@ -77,3 +77,54 @@ Note:
 - If using localhost url then make sure to spin mogod local mongo server
 - You can get mongodb url from from mongoDB atlas if want to use cloud mongodb database
 
+
+
+## API Reference
+
+API Endpoint: https://newsletter-rest-api.herokuapp.com/
+
+#### Get all user data
+
+```http
+  GET /users
+```
+
+#### Get specific user data
+
+```http
+  GET /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. fetch user data  with specified email  |
+
+
+#### Delete all user data
+
+```http
+  DELETE /users
+```
+
+#### Delete specific user data
+
+```http
+  DELETE /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. Delete user data  with specified email  |
+
+
+#### Post user data
+
+```http
+  POST /users
+```
+
+| Content-type | Type     | 
+| :-------- | :------- |
+| `application/x-www-form-urlencoded`      | `string` | 
+
+  
