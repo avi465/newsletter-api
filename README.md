@@ -9,7 +9,7 @@ newsletter-REST-API for [newsletter-webpage](https://github.com/avi465/newslette
 
 **Client:** Html, Css, Javascript
 
-**Server:** Node, Express, Mongodb, Ejs
+**Server:** Node, Express, Mongodb
 
 
 
@@ -126,5 +126,15 @@ API Endpoint: https://newsletter-rest-api.herokuapp.com/
 | Content-type | Type     | 
 | :-------- | :------- |
 | `application/x-www-form-urlencoded`      | `string` | 
+
+**Body:**
+| Name | Value     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `firstName`      | `EX: {Avinash}` | **Required**. First Name Here  |
+| `lastName`      | `EX: {Karmjit}` | **Required**. Last Name Here  |
+| `email`      | `EX: {avi@gmail.com}` | **Required**. Email Here  |
+
+
+
 
   
