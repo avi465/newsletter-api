@@ -1,37 +1,137 @@
-## Welcome to GitHub Pages
+# newsletter-REST-API
 
-You can use the [editor on GitHub](https://github.com/avi465/newsletter-REST-API/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+newsletter-REST-API for [newsletter-webpage](https://github.com/avi465/newsletter-webpage) repository
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Tech Stack
 
-```markdown
-Syntax highlighted code block
+**Client:** Html, Css, Javascript
 
-# Header 1
-## Header 2
-### Header 3
+**Server:** Node, Express, Mongodb
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Features
 
-[Link](url) and ![Image](src)
+GET, POST, PUT, PATCH, DELETE
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/avi465/newsletter-REST-API
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Go to the project directory
 
-### Jekyll Themes
+```bash
+  cd my-project
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/avi465/newsletter-REST-API/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Install dependencies
 
-### Support or Contact
+```bash
+  npm install
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Add .env
+
+```bash
+  touch .env
+```
+
+Add environment variables
+
+```bash
+  open .env
+```
+
+Start the server
+
+```bash
+  node app.js
+```
+
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`MONGODB_URL`
+
+ex:
+    
+    MONGODB_URL=mongodb://localhost:27017/database_name
+or
+
+    MONGODB_URL=mongodb+srv://{user}:{password}@{project_name}.mongodb.net/{dataase_name}
+
+Note: 
+
+- If using localhost url then make sure to spin mogod local mongo server
+- You can get mongodb url from from mongoDB atlas if want to use cloud mongodb database
+
+
+
+## API Reference
+
+API Endpoint: https://newsletter-rest-api.herokuapp.com/
+
+#### Get all user data
+
+```http
+  GET /users
+```
+
+#### Get specific user data
+
+```http
+  GET /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. fetch user data  with specified email  |
+
+
+#### Delete all user data
+
+```http
+  DELETE /users
+```
+
+#### Delete specific user data
+
+```http
+  DELETE /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. Delete user data  with specified email  |
+
+
+#### Post user data
+
+```http
+  POST /users
+```
+
+| Content-type | Type     | 
+| :-------- | :------- |
+| `application/x-www-form-urlencoded`      | `string` | 
+
+**Body:**
+| Name | Value     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `firstName`      | `EX: {Avinash}` | **Required**. First Name Here  |
+| `lastName`      | `EX: {Karmjit}` | **Required**. Last Name Here  |
+| `email`      | `EX: {avi@gmail.com}` | **Required**. Email Here  |
+
+
+
