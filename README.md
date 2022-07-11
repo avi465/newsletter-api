@@ -1,7 +1,7 @@
 
-# newsletter-REST-API
+# Newsletter Api
 
-newsletter-REST-API for [newsletter-webpage](https://github.com/avi465/newsletter-webpage) repository
+newsletter api for [newsletter-webpage](https://github.com/avi465/newsletter-webpage) repository
 
 
 
