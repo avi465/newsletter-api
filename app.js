@@ -6,18 +6,37 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const PORT = process.env.PORT || 3000
+
 ////////////// Running server //////////////
-app.listen(process.env.PORT || 3000, () => console.log("server is running on port 3000"));
+// app.listen(PORT, () => console.log("server is running on port 3000"));
 
 
 ////////////// MongoDB connection //////////////
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log("Connected to the Database.");
+// mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => {
+//         console.log("Connected to the Database.");
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+// for cyclic.sh hosting
+const connectDB = async () => {
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+        console.log(error);
+        process.exit(1);
+    }
+}
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
     })
-    .catch(err => {
-        console.log(err);
-    });
+})
+// 
 
 // mongoose schema
 const newsletterSchema = new mongoose.Schema({
