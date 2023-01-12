@@ -136,5 +136,21 @@ API Endpoint: https://ruby-adder-coat.cyclic.app/
 
 
 
+#### Update specific user data
 
+```http
+  PUT /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. update user data  with specified email  |
+
+```http
+  PATCH /users/{email}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`      | `string` | **Required**. update user data  with specified email  |
   
