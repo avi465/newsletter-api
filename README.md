@@ -81,7 +81,7 @@ Note:
 
 ## API Reference
 
-API Endpoint: https://newsletter-rest-api.herokuapp.com/
+API Endpoint: https://ruby-adder-coat.cyclic.app/
 
 #### Get all user data
 
